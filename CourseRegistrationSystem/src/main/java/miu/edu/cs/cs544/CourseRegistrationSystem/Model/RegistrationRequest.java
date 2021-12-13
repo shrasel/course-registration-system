@@ -3,6 +3,7 @@ package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 public class RegistrationRequest {
     @Id
@@ -11,7 +12,10 @@ public class RegistrationRequest {
     private int courseCode;
     private String priority;
 
-    @ManyToOne
-    private CourseOffering courseOffering;
+    @OneToMany
+    private Registration registration;
+
+    /*@ManyToOne
+    private CourseOffering courseOffering;*/
 
 }

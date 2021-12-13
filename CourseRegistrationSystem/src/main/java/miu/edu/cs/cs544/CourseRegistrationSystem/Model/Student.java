@@ -2,18 +2,22 @@ package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 public class Student extends  User{
     private String studentId;
-    @Transient
+    @ManyToOne
     private Address mailingAddress;
-    @Transient
+    @ManyToOne
     private Address HomeAddress;
-    @Transient
-    private Registration registration;
+
+   // @ManyToMany
+    //private Registration registration;
+
+    @OneToMany
+    private List<RegistrationRequest> registrationRequest;
 
 }

@@ -17,6 +17,9 @@ public class CourseOffering {
     @JoinColumn(name="course_Id")
     private List<Course> course;
 
+    @OneToMany
+    private List<RegistrationRequest> registrationRequest;
+
 
 
 
