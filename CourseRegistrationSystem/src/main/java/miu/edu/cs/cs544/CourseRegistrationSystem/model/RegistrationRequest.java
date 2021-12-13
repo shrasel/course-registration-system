@@ -1,8 +1,7 @@
-package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
+package miu.edu.cs.cs544.CourseRegistrationSystem.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 public class RegistrationRequest {

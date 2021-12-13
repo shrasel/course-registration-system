@@ -1,10 +1,9 @@
-package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
+package miu.edu.cs.cs544.CourseRegistrationSystem.model;
 
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
 import java.util.List;
 
 @Entity
