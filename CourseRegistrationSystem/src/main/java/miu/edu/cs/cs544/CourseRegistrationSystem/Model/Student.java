@@ -14,8 +14,8 @@ public class Student extends  User{
     @ManyToOne
     private Address HomeAddress;
 
-   // @ManyToMany
-    //private Registration registration;
+    @OneToMany
+    private Registration registration;
 
     @OneToMany
     private List<RegistrationRequest> registrationRequest;
