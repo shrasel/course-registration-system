@@ -1,9 +1,15 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
-import lombok.Data;
-
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import lombok.Data;
 
 
 @Entity
@@ -19,7 +25,7 @@ public class CourseOffering {
 
     @ManyToOne
     @JoinColumn(name="acadamicBlockId")
-    private AcademicBlock academicBlock;
+    private AcadamicBlock academicBlock;
 
     @ManyToOne()
     @JoinColumn(name="courseId")
@@ -31,7 +37,7 @@ public class CourseOffering {
 
     public CourseOffering(){}
 
-    public CourseOffering(int id, String code, int capacity, int nbOfRegisteredStudent, String faculty, AcademicBlock academicBlock, Course course, List<RegistrationRequest> registrationRequest) {
+    public CourseOffering(int id, String code, int capacity, int nbOfRegisteredStudent, String faculty, AcadamicBlock academicBlock, Course course, List<RegistrationRequest> registrationRequest) {
         this.id = id;
         this.code = code;
         this.capacity = capacity;
