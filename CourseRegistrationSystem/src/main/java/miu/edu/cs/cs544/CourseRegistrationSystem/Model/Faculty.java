@@ -1,17 +1,23 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
-import lombok.Data;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
-import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-public class Faculty extends User{
-    private String title;
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
+public class Faculty extends User {
+	private String title;
 
-    @OneToMany
-   private List<Student> student;
+	@OneToMany
+	private List<Student> student;
 }

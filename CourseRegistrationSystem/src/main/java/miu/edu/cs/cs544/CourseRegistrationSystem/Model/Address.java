@@ -11,7 +11,7 @@ import java.util.List;
 public class Address {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
     private String street;
     private String city;
     private String postalCode;
@@ -19,6 +19,6 @@ public class Address {
     private String country;
 
     @OneToMany
-    @JoinColumn(name="student_Id")
+    @JoinColumn(name="studentId")
     private List<Student> students;
 }
