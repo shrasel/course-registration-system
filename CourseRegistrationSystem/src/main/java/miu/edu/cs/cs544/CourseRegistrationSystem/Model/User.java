@@ -1,5 +1,6 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
+
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -11,7 +12,7 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue
-    private Integer id;
+    private  int id;
     private String name;
     private String email;
 }

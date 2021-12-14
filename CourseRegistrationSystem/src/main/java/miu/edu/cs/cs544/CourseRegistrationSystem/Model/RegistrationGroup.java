@@ -1,15 +1,33 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
-import javax.persistence.OneToMany;
+import lombok.Data;
+import miu.edu.cs.cs544.CourseRegistrationSystem.Enum.Entry;
+import miu.edu.cs.cs544.CourseRegistrationSystem.Enum.Track;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Data
 public class RegistrationGroup {
+
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
 
-    @OneToMany
-    private List<AcadamicBlock> acadamicBlockList;
+    @Enumerated(EnumType.STRING)
+    private Entry entry;
+    @Enumerated(EnumType.STRING)
+    private Track Track;
 
     @OneToMany
-    private  List<Student> students;
+    private List<Student> students;
+
+   @OneToMany(cascade = CascadeType.ALL)
+    private List<AcadamicBlock> acadamicBlockList;
+
+    public void addStudent(Student Student) {}
+    public void addBlock(AcadamicBlock block) {}
+    public void removeStudent(int groupId, int studentId){}
+    public void removeBlock(int groupId, AcadamicBlock block){}
 }
