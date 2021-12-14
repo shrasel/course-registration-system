@@ -6,6 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -21,6 +24,7 @@ public class AcadamicBlock {
 
     private String Semester;
 
+    @OneToMany
     private List<CourseOffering> courseOfferings;
 
     @Enumerated(EnumType.STRING)
