@@ -6,6 +6,7 @@ import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Role;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.User;
 
 public interface UserService {
+	
 	User saveUser(User user);
 
 	Role saveRole(Role role);
@@ -15,4 +16,5 @@ public interface UserService {
 	User getUser(String username);
 
 	List<User> getUsers();
+	
 }
