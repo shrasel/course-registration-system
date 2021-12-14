@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: CourseRegistrationSystem
+  datasource:
+    url: jdbc:mysql://localhost:3366/cms
+    username: root
+    password: asdfg123
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximumPoolSize: 10
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
