@@ -1,11 +1,8 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
-
+import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -17,6 +14,7 @@ public class Course {
     private String name;
     private String code;
     private String description;
-    @OneToMany
+
+    @OneToMany(fetch = FetchType.LAZY)
     private List<CourseOffering> courseOfferings;
 }

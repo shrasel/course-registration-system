@@ -1,6 +1,7 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.service.Impl;
 
-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.AcadamicBlock;
+import miu.edu.cs.cs544.CourseRegistrationSystem.Enum.Group;
+import miu.edu.cs.cs544.CourseRegistrationSystem.Model.AcademicBlock;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationGroup;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Student;
 import miu.edu.cs.cs544.CourseRegistrationSystem.repository.RegistrationGroupRepo;
@@ -22,6 +23,21 @@ public class RegistrationGroupServiceImpl implements IRegistrationGroupService {
     }
 
     @Override
+    public RegistrationGroup getGroup(Group name) {
+        return registrationGroupRepo.findByGroup(name);
+    }
+
+    @Override
+    public void addRegistrationGroup(RegistrationGroup registrationGroup) {
+        registrationGroupRepo.save(registrationGroup);
+    }
+
+    @Override
+    public void deleteRegistrationGroup(Integer id) {
+        registrationGroupRepo.deleteById(id);
+    }
+
+    @Override
     public void addStudent(int groupId, Student student) {
         Optional<RegistrationGroup> registrationGroup = registrationGroupRepo.findById(groupId);
         registrationGroup.ifPresentOrElse(r->{
@@ -35,7 +51,7 @@ public class RegistrationGroupServiceImpl implements IRegistrationGroupService {
 
 
     @Override
-    public void addBlock(int groupId, AcadamicBlock block) {
+    public void addBlock(int groupId, AcademicBlock block) {
         Optional<RegistrationGroup> registrationGroup = registrationGroupRepo.findById(groupId);
         registrationGroup.ifPresentOrElse(r-> {
             r.getAcadamicBlockList().stream().filter(b -> b.getId() == block.getId()).findAny().orElseThrow(() -> new IllegalArgumentException("This block is already exist"));
@@ -68,10 +84,10 @@ public class RegistrationGroupServiceImpl implements IRegistrationGroupService {
 
 
     @Override
-    public void removeBlock(int groupId, AcadamicBlock block) {
+    public void removeBlock(int groupId, AcademicBlock block) {
         Optional<RegistrationGroup> registrationGroup = registrationGroupRepo.findById(groupId);
         registrationGroup.ifPresentOrElse(r -> {
-            Optional<AcadamicBlock> acadamicBlock = r.getAcadamicBlockList().stream().filter(b -> b.getId() == block.getId()).findAny();
+            Optional<AcademicBlock> acadamicBlock = r.getAcadamicBlockList().stream().filter(b -> b.getId() == block.getId()).findAny();
             acadamicBlock.ifPresentOrElse(ab -> {
                 r.removeBlock(groupId, block);
             }, () -> {

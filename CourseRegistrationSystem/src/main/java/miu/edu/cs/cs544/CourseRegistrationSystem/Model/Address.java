@@ -1,6 +1,7 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import lombok.Data;
+import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Student;
 
 import javax.persistence.*;
 import java.util.List;
@@ -19,6 +20,6 @@ public class Address {
     private String country;
 
     @OneToMany
-    @JoinColumn(name="student_Id")
+    //@JoinColumn(name="student_Id")
     private List<Student> students;
 }

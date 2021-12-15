@@ -1,21 +1,31 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
+import lombok.Data;
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
+@Entity
+@Data
 public class RegistrationRequest {
     @Id
     @GeneratedValue
     private  int id;
-    private int courseCode;
-    private String priority;
+    private String courseCode;
+    private int priority;
 
-    @OneToMany
+    @ManyToOne
     private Registration registration;
 
-    /*@ManyToOne
-    private CourseOffering courseOffering;*/
+    public RegistrationRequest() {
+    }
 
+    public RegistrationRequest(int id, String courseCode, int priority, Registration registration) {
+        this.id = id;
+        this.courseCode = courseCode;
+        this.priority = priority;
+        this.registration = registration;
+    }
 }

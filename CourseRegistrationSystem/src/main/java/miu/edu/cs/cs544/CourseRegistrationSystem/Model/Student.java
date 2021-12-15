@@ -1,27 +1,35 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Data
-public class Student{
-    @Id
+@EqualsAndHashCode(callSuper = false)
+public class Student extends User {
+  /*  @Id
     @GeneratedValue
     private  int id;
     private String name;
-    private String email;
+    private String email;*/
     private String studentId;
-    private String mailingAddress;
+    /*private String mailingAddress;
 
     private String homeAddress;
+   */
 
-  /* @OneToMany
-    private List<Registration>registration;
+        @ManyToOne
+        private Address mailingAddress;
 
-    @OneToMany
-    private List<RegistrationRequest> registrationRequest;
-*/
+        @ManyToOne
+        private Address homeAddress;
+
+        @OneToMany(cascade = CascadeType.ALL)
+        private List<RegistrationRequest> registrationRequest;
+
+
+
 }
