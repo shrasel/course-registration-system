@@ -1,5 +1,6 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.controller;
 
+import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Registration;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationRequest;
 import miu.edu.cs.cs544.CourseRegistrationSystem.service.RegistrationRequestService;
@@ -7,6 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import javax.validation.Valid;
+import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/registrationrequest")
@@ -14,27 +20,18 @@ public class RegistrationRequestController {
     @Autowired
     private RegistrationRequestService registrationRequestService;
 
-    @PostMapping
-    public RegistrationRequest createRegistrationRequest(@RequestBody RegistrationRequest registrationRequest) {
-        return registrationRequestService.create(registrationRequest);
+    @PostMapping("/add")
+    public ResponseEntity<RegistrationRequest> addRegistrationRequest(@RequestBody @Valid RegistrationRequest registrationRequest){
+        RegistrationRequest addedRegistrationRequest= registrationRequestService.add(registrationRequest);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(addedRegistrationRequest.getId())
+                .toUri();
+        return ResponseEntity.created(uri).body(addedRegistrationRequest);
+    }
+    @GetMapping("/all")
+    public List<RegistrationRequest> listAllRegistrationRequest() {
 
-    }
-    @PutMapping("/{registrationRequestId}")
-    public ResponseEntity<?> updateRegistrationRequest(@PathVariable int registrationRequestId, @RequestBody RegistrationRequest registrationRequest) {
-        if (registrationRequestId==registrationRequest.getId()) {
-            return ResponseEntity.ok(registrationRequestService.update(registrationRequestId, registrationRequest));
-        } else {
-            return ResponseEntity.badRequest().build();
-        }
-    }
-    @GetMapping
-    public String listRegistrationsRequest(Model model) {
-        model.addAttribute("registrationRequest", registrationRequestService.findAll());
-        return "registrationRequest";
-    }
-    @GetMapping("/delete")
-    public String deleteRegistrationRequest(Model model, @PathVariable("registrationRequest") int registrationRequestId) {
-        registrationRequestService.deleteRegistrationRequest(registrationRequestId);
-        return listRegistrationsRequest(model);
+        return registrationRequestService.findAll();
     }
 }

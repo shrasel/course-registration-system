@@ -15,26 +15,4 @@ public class RegistrationService {
     @Autowired
     private RegistrationRepository registrationRepository ;
 
-    public Registration create(Registration registration) {
-
-        return registrationRepository.save(registration);
-    }
-    public Optional<Registration> findById(int registrationId) {
-        return registrationRepository.findById(registrationId);
-    }
-
-    public Registration update(int registrationId,Registration registration) {
-        Registration entity = findById(registrationId).orElse(null);
-        entity.setStudentId(registration.getStudentId());
-        entity.setCourseId(registration.getCourseId());
-        entity.setCourseOffering(registration.getCourseOffering());
-        return registrationRepository.save(entity);
-    }
-    public void deleteRegistration (Integer registrationId) {
-        registrationRepository.deleteById(registrationId);
-    }
-
-    public List<Registration> findAll() {
-        return registrationRepository.findAll();
-    }
 }

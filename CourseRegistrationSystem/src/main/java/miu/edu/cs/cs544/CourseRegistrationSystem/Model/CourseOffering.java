@@ -1,5 +1,6 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Data
+@AllArgsConstructor
 public class CourseOffering {
     @Id
     @GeneratedValue
@@ -31,16 +33,7 @@ public class CourseOffering {
 
     public CourseOffering(){}
 
-    public CourseOffering(int id, String code, int capacity, int nbOfRegisteredStudent, String faculty, AcademicBlock academicBlock, Course course, List<RegistrationRequest> registrationRequest) {
-        this.id = id;
-        this.code = code;
-        this.capacity = capacity;
-        this.nbOfRegisteredStudent = nbOfRegisteredStudent;
-        this.faculty = faculty;
-        this.academicBlock = academicBlock;
-        this.course = course;
-        this.registrationRequest = registrationRequest;
-    }
+
 
 
 

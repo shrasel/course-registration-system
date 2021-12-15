@@ -4,8 +4,12 @@ import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
 import miu.edu.cs.cs544.CourseRegistrationSystem.service.CourseOfferingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import javax.validation.Valid;
+import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/courseoffering")
@@ -14,29 +18,37 @@ public class CourseOfferingController {
     @Autowired
     private CourseOfferingService courseOfferingService;
 
-    @PostMapping
-    public CourseOffering createCourseOffering(@RequestBody CourseOffering courseOffering) {
-        return courseOfferingService.create(courseOffering);
-
+    @PostMapping("/add")
+    public ResponseEntity<CourseOffering> addCourseOffering(@RequestBody @Valid CourseOffering courseOffering){
+        CourseOffering addedcourseoffering= courseOfferingService.add(courseOffering);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(addedcourseoffering.getId())
+                .toUri();
+        return ResponseEntity.created(uri).body(addedcourseoffering);
     }
-    @PutMapping("/{courseOfferingId}")
-    public ResponseEntity<?> updateCourseOffering(@PathVariable int courseOfferingId, @RequestBody CourseOffering courseOffering) {
-        if (courseOfferingId==courseOffering.getId()) {
-            return ResponseEntity.ok(courseOfferingService.update(courseOfferingId, courseOffering));
-        } else {
-            return ResponseEntity.badRequest().build();
+    @GetMapping("/{id}")
+    public CourseOffering findByid(@PathVariable int  id) {
+        return courseOfferingService.findById(id).get();
+    }
+    @GetMapping("/all")
+    public List<CourseOffering> listAllCourseOffering() {
+        return courseOfferingService.findAll();
+    }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<CourseOffering> updateCourseOffering(@PathVariable int id, @RequestBody @Valid CourseOffering courseOffering){
+        CourseOffering updatedCourseOffering=null;
+        CourseOffering tobeUpdateCourseOffering =courseOfferingService.findById(id).get();
+        if(tobeUpdateCourseOffering==null){
+            updatedCourseOffering= courseOfferingService.add(courseOffering);
+        }else {
+            courseOffering.setId(tobeUpdateCourseOffering.getId());
+            updatedCourseOffering= courseOfferingService.update(courseOffering);
         }
+        return  ResponseEntity.ok(updatedCourseOffering);
     }
-    @GetMapping
-    public String listCoursesOffering(Model model) {
-        model.addAttribute("CoursesOffering", courseOfferingService.findAll());
-        return "CoursesOffering";
-    }
-    @GetMapping("/delete")
-    public String deleteCourseOffering(Model model, @PathVariable("courseOffering") int courseOfferingId) {
-        courseOfferingService.deleteCourseOffering(courseOfferingId);
-        return listCoursesOffering(model);
-    }
+
+
 
 
 }

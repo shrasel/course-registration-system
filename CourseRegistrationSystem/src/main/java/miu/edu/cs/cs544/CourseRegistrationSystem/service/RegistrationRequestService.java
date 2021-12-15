@@ -16,25 +16,11 @@ public class RegistrationRequestService {
     @Autowired
     private RegistrationRequestRepository registrationRequestRepository ;
 
-    public RegistrationRequest create(RegistrationRequest registrationRequest) {
-        return registrationRequestRepository.save(registrationRequest);
+    public RegistrationRequest add(RegistrationRequest r) {
+        return  registrationRequestRepository.save(r);
     }
-    public Optional<RegistrationRequest> findById(int registrationRequestId) {
-        return registrationRequestRepository.findById(registrationRequestId);
-    }
-
-    public RegistrationRequest update(int registrationRequestId,RegistrationRequest registrationRequest) {
-        RegistrationRequest entity = findById(registrationRequestId).orElse(null);
-        entity.setCourseCode(registrationRequest.getCourseCode());
-        entity.setPriority(registrationRequest.getPriority());
-        entity.setRegistration(registrationRequest.getRegistration());
-        return registrationRequestRepository.save(entity);
-    }
-    public void deleteRegistrationRequest (Integer registrationRequestId) {
-        registrationRequestRepository.deleteById(registrationRequestId);
-    }
-
     public List<RegistrationRequest> findAll() {
+
         return registrationRequestRepository.findAll();
     }
 }

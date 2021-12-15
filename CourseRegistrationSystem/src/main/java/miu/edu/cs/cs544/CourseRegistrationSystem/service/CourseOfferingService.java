@@ -8,32 +8,28 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
 public  class CourseOfferingService {
 
     @Autowired
     private CourseOfferingRepository courseOfferingRepository ;
 
-    public CourseOffering create(CourseOffering courseOffering) {
-        return courseOfferingRepository.save(courseOffering);
-    }
-    public Optional<CourseOffering> findById(int courseOfferingId) {
-        return courseOfferingRepository.findById(courseOfferingId);
-    }
+    public Optional<CourseOffering> findById(int id) {
 
-    public CourseOffering update(int courseOfferingId,CourseOffering courseOffering) {
-        CourseOffering entity = findById(courseOfferingId).orElse(null);
-        entity.setCode(courseOffering.getCode());
-        entity.setFaculty(courseOffering.getFaculty());
-        entity.setCapacity(courseOffering.getCapacity());
-        entity.setNbOfRegisteredStudent(courseOffering.getNbOfRegisteredStudent());
-        return courseOfferingRepository.save(entity);
-    }
-    public void deleteCourseOffering(Integer courseOfferingId) {
-        courseOfferingRepository.deleteById(courseOfferingId);
+        return courseOfferingRepository.findById(id);
     }
 
     public List<CourseOffering> findAll() {
+
         return courseOfferingRepository.findAll();
+    }
+
+    public CourseOffering add(CourseOffering c) {
+        return  courseOfferingRepository.save(c);
+    }
+
+    public CourseOffering update(CourseOffering c) {
+        return  courseOfferingRepository.save(c);
     }
 }
