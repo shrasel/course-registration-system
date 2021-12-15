@@ -27,6 +27,6 @@ public class AcadamicBlock {
     @OneToMany
     private List<CourseOffering> courseOfferings;
 
-//    @Enumerated(EnumType.STRING)
-//    private Semester semester;
+    @Enumerated(EnumType.STRING)
+    private Semester semester;
 }
