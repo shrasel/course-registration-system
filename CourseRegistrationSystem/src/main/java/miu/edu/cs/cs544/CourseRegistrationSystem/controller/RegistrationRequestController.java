@@ -9,8 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -21,7 +19,7 @@ public class RegistrationRequestController {
     private RegistrationRequestService registrationRequestService;
 
     @PostMapping("/add")
-    public ResponseEntity<RegistrationRequest> addRegistrationRequest(@RequestBody @Valid RegistrationRequest registrationRequest){
+    public ResponseEntity<RegistrationRequest> addRegistrationRequest(@RequestBody  RegistrationRequest registrationRequest){
         RegistrationRequest addedRegistrationRequest= registrationRequestService.add(registrationRequest);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")

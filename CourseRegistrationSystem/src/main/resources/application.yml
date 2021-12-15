@@ -1,0 +1,22 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: registration-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/registration-db
+    username: root
+    password: Y32UPf#jURGnzM.
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximumPoolSize: 10
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect

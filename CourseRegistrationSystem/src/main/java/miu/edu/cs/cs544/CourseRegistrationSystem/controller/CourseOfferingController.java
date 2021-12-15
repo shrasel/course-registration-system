@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class CourseOfferingController {
     private CourseOfferingService courseOfferingService;
 
     @PostMapping("/add")
-    public ResponseEntity<CourseOffering> addCourseOffering(@RequestBody @Valid CourseOffering courseOffering){
+    public ResponseEntity<CourseOffering> addCourseOffering(@RequestBody  CourseOffering courseOffering){
         CourseOffering addedcourseoffering= courseOfferingService.add(courseOffering);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
@@ -36,7 +35,7 @@ public class CourseOfferingController {
         return courseOfferingService.findAll();
     }
     @PutMapping("/update/{id}")
-    public ResponseEntity<CourseOffering> updateCourseOffering(@PathVariable int id, @RequestBody @Valid CourseOffering courseOffering){
+    public ResponseEntity<CourseOffering> updateCourseOffering(@PathVariable int id, @RequestBody  CourseOffering courseOffering){
         CourseOffering updatedCourseOffering=null;
         CourseOffering tobeUpdateCourseOffering =courseOfferingService.findById(id).get();
         if(tobeUpdateCourseOffering==null){
