@@ -1,14 +1,13 @@
-package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
+package miu.edu.cs.cs544.CourseRegistrationSystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,10 +15,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AcadamicBlock {
     @Id
-    @GeneratedValue
-	private Long id;
-    private String code;
-    private String name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private LocalDate StartDate;
+
+    private LocalDate EndDate;
+
+    private String Semester;
+
+    @OneToMany
+    private List<CourseOffering> courseOfferings;
 
     @Enumerated(EnumType.STRING)
     private Semester semester;

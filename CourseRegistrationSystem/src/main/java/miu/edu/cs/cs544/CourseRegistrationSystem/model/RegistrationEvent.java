@@ -1,4 +1,4 @@
-package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
+package miu.edu.cs.cs544.CourseRegistrationSystem.model;
 
 import javax.persistence.OneToMany;
 import java.time.LocalDate;

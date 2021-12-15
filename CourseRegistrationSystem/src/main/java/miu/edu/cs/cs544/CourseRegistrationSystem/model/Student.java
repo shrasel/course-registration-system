@@ -1,8 +1,9 @@
-package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
+package miu.edu.cs.cs544.CourseRegistrationSystem.model;
 
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
@@ -15,9 +16,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class Faculty extends User {
-	private String title;
+public class Student extends User {
+	
+	private String studentId;
+
+	@ManyToOne
+	private Address mailingAddress;
+
+	@ManyToOne
+	private Address homeAddress;
 
 	@OneToMany
-	private List<Student> student;
+	private List<RegistrationRequest> registrationRequest;
+
 }
