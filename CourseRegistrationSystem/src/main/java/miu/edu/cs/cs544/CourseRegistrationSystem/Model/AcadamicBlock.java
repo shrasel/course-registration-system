@@ -1,4 +1,4 @@
-package miu.edu.cs.cs544.CourseRegistrationSystem.model;
+package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import javax.persistence.*;
 
@@ -27,6 +27,6 @@ public class AcadamicBlock {
     @OneToMany
     private List<CourseOffering> courseOfferings;
 
-    @Enumerated(EnumType.STRING)
-    private Semester semester;
+//    @Enumerated(EnumType.STRING)
+//    private Semester semester;
 }

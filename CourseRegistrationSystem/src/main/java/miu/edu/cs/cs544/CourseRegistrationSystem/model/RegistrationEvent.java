@@ -1,11 +1,11 @@
-package miu.edu.cs.cs544.CourseRegistrationSystem.model;
+package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.List;
 
 public class RegistrationEvent {
-    private  int id;
+    private int id;
     private String name;
     private LocalDate startDate;
     private LocalDate endDate;

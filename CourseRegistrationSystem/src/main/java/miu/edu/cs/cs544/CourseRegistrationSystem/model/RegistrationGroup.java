@@ -1,4 +1,4 @@
-package miu.edu.cs.cs544.CourseRegistrationSystem.model;
+package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import javax.persistence.OneToMany;
 import java.util.List;
