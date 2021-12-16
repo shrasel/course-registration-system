@@ -16,7 +16,7 @@ import miu.edu.cs.cs544.CourseRegistrationSystem.service.RoleService;
 
 @RestController
 
-@RequestMapping("/roles")
+@RequestMapping("/api/roles")
 public class RoleController {
 	
 	@Autowired
