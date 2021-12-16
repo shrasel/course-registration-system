@@ -25,7 +25,7 @@ public class CourseOffering {
 
     @ManyToOne
     @JoinColumn(name="acadamicBlockId")
-    private AcadamicBlock academicBlock;
+    private AcademicBlock academicBlock;
 
     @ManyToOne()
     @JoinColumn(name="courseId")
@@ -37,7 +37,7 @@ public class CourseOffering {
 
     public CourseOffering(){}
 
-    public CourseOffering(int id, String code, int capacity, int nbOfRegisteredStudent, String faculty, AcadamicBlock academicBlock, Course course, List<RegistrationRequest> registrationRequest) {
+    public CourseOffering(int id, String code, int capacity, int nbOfRegisteredStudent, String faculty, AcademicBlock academicBlock, Course course, List<RegistrationRequest> registrationRequest) {
         this.id = id;
         this.code = code;
         this.capacity = capacity;

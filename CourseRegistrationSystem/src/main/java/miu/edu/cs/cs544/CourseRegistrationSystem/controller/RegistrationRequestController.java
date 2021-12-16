@@ -1,7 +1,6 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.controller;
 
-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Registration;
-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationRequest;
+import miu.edu.cs.cs544.CourseRegistrationSystem.model.RegistrationRequest;
 import miu.edu.cs.cs544.CourseRegistrationSystem.service.RegistrationRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

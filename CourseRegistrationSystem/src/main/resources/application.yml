@@ -2,9 +2,9 @@ spring:
   application:
     name: CourseRegistrationSystem
   datasource:
-    url: jdbc:mysql://localhost:3366/cms
+    url: jdbc:mysql://localhost:3306/courseRegistration
     username: root
-    password: asdfg123
+    password:
     driverClassName: com.mysql.cj.jdbc.Driver
     hikari:
       maximumPoolSize: 10

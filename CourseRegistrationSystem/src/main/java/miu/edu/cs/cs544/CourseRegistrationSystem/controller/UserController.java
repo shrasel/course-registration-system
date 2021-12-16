@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import lombok.RequiredArgsConstructor;
-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Role;
-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.User;
+//import miu.edu.cs.cs544.CourseRegistrationSystem.model.Role;
+import miu.edu.cs.cs544.CourseRegistrationSystem.model.User;
 import miu.edu.cs.cs544.CourseRegistrationSystem.service.UserService;
 
 @RestController
@@ -26,7 +26,7 @@ public class UserController {
 	public ResponseEntity<List<User>> getUsers() {
 		return ResponseEntity.ok().body(userService.getUsers());
 	}
-	
+
 	@PostMapping("/user/save")
 	public ResponseEntity<User> saveUser(@RequestBody User user) {
 		URI uri = URI.create (ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/user/save").toUriString());

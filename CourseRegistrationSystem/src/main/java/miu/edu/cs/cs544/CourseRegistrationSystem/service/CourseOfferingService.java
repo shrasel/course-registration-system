@@ -1,6 +1,6 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.service;
 
-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
+import miu.edu.cs.cs544.CourseRegistrationSystem.model.CourseOffering;
 import miu.edu.cs.cs544.CourseRegistrationSystem.repository.CourseOfferingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
