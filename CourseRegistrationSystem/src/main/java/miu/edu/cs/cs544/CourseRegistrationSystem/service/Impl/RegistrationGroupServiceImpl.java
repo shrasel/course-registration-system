@@ -1,10 +1,13 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.service.Impl;
 
-import miu.edu.cs.cs544.CourseRegistrationSystem.Enum.Group;
-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.AcademicBlock;
+import miu.edu.cs.cs544.CourseRegistrationSystem.DTO.StudentDTO;
+import miu.edu.cs.cs544.CourseRegistrationSystem.Model.AcadamicBlock;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationGroup;
+import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationGroupStudents;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Student;
 import miu.edu.cs.cs544.CourseRegistrationSystem.repository.RegistrationGroupRepo;
+import miu.edu.cs.cs544.CourseRegistrationSystem.repository.RegistrationGroupStudentRepo;
+import miu.edu.cs.cs544.CourseRegistrationSystem.repository.StudentRepository;
 import miu.edu.cs.cs544.CourseRegistrationSystem.service.IRegistrationGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +19,10 @@ import java.util.Optional;
 @Transactional
 public class RegistrationGroupServiceImpl implements IRegistrationGroupService {
     private RegistrationGroupRepo registrationGroupRepo;
+    @Autowired
+    private StudentRepository studentRepository;
+    @Autowired
+    private RegistrationGroupStudentRepo registrationGroupStudentRepo;
 
     @Autowired
     public RegistrationGroupServiceImpl(RegistrationGroupRepo registrationGroupRepo) {
@@ -23,35 +30,29 @@ public class RegistrationGroupServiceImpl implements IRegistrationGroupService {
     }
 
     @Override
-    public RegistrationGroup getGroup(Group name) {
-        return registrationGroupRepo.findByGroup(name);
+    public void addStudent(StudentDTO studentDto) {
+        Student student = studentRepository.findByStudentId(studentDto.getStudentId());
+        Optional<RegistrationGroup> registrationGroup = registrationGroupRepo.findById(studentDto.getGroupId());
+        RegistrationGroupStudents registrationGroupStudent = new RegistrationGroupStudents();
+        registrationGroupStudent.setStudent_id(student.getId());
+        registrationGroupStudent.setRegroupid(registrationGroup.get().getId());
+        registrationGroupStudentRepo.save(registrationGroupStudent);
+
     }
 
-    @Override
-    public void addRegistrationGroup(RegistrationGroup registrationGroup) {
-        registrationGroupRepo.save(registrationGroup);
-    }
-
-    @Override
-    public void deleteRegistrationGroup(Integer id) {
-        registrationGroupRepo.deleteById(id);
-    }
-
-    @Override
-    public void addStudent(int groupId, Student student) {
-        Optional<RegistrationGroup> registrationGroup = registrationGroupRepo.findById(groupId);
-        registrationGroup.ifPresentOrElse(r->{
-            r.getStudents().stream().filter(s -> s.getId() ==student.getId() ).findAny().orElseThrow(()->new IllegalArgumentException("This Student is already exist"));
-            r.addStudent(student);
-        },()->{
-            new IllegalArgumentException("This Group is not exist");
-        });
-
+    private Student convertStudentModel(StudentDTO studentDto){
+        Student student = new Student();
+        student.setStudentId(studentDto.getStudentId());
+        student.setEmail(studentDto.getEmail());
+        student.setHomeAddress(studentDto.getHomeAddress());
+        student.setMailingAddress(studentDto.getMailingAddress());
+        student.setName(studentDto.getName());
+        return student;
     }
 
 
     @Override
-    public void addBlock(int groupId, AcademicBlock block) {
+    public void addBlock(int groupId, AcadamicBlock block) {
         Optional<RegistrationGroup> registrationGroup = registrationGroupRepo.findById(groupId);
         registrationGroup.ifPresentOrElse(r-> {
             r.getAcadamicBlockList().stream().filter(b -> b.getId() == block.getId()).findAny().orElseThrow(() -> new IllegalArgumentException("This block is already exist"));
@@ -68,26 +69,26 @@ public class RegistrationGroupServiceImpl implements IRegistrationGroupService {
 
         Optional<RegistrationGroup> registrationGroup = registrationGroupRepo.findById(groupId);
         registrationGroup.ifPresentOrElse(r-> {
-            Optional<Student> student = r.getStudents().stream().filter(s -> s.getId() == studentId).findAny();
-            student.ifPresentOrElse(s -> {
+           // Optional<Student> student = r.getStudents().stream().filter(s -> s.getId() == studentId).findAny();
+           // student.ifPresentOrElse(s -> {
                 r.removeStudent(groupId,studentId);
 
             }, () -> {
                 new IllegalArgumentException("The student is not exist in this Group");
             });
-        }, () -> {
+      // }, () -> {
             new IllegalArgumentException("This Group is not exist");
 
-        });
+       // });
 
     }
 
 
     @Override
-    public void removeBlock(int groupId, AcademicBlock block) {
+    public void removeBlock(int groupId, AcadamicBlock block) {
         Optional<RegistrationGroup> registrationGroup = registrationGroupRepo.findById(groupId);
         registrationGroup.ifPresentOrElse(r -> {
-            Optional<AcademicBlock> acadamicBlock = r.getAcadamicBlockList().stream().filter(b -> b.getId() == block.getId()).findAny();
+            Optional<AcadamicBlock> acadamicBlock = r.getAcadamicBlockList().stream().filter(b -> b.getId() == block.getId()).findAny();
             acadamicBlock.ifPresentOrElse(ab -> {
                 r.removeBlock(groupId, block);
             }, () -> {

@@ -1,8 +1,8 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import lombok.Data;
-import miu.edu.cs.cs544.CourseRegistrationSystem.Enum.Group;
-
+import miu.edu.cs.cs544.CourseRegistrationSystem.Enum.Entry;
+import miu.edu.cs.cs544.CourseRegistrationSystem.Enum.Track;
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,18 +16,17 @@ public class RegistrationGroup {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private Group group;
+    private Entry entry;
+    @Enumerated(EnumType.STRING)
+    private Track Track;
 
-    @OneToMany
-    private List<Student> students;
+   /* @OneToMany
+    private List<Student> students;*/
 
    @OneToMany(cascade = CascadeType.ALL)
-    private List<AcademicBlock> acadamicBlockList;
+    private List<AcadamicBlock> acadamicBlockList;
 
-    public void addStudent(Student Student) {}
-    public void addBlock(AcademicBlock block) {
-        this.acadamicBlockList.add(block);
-    }
+    public void addBlock(AcadamicBlock block) {}
     public void removeStudent(int groupId, int studentId){}
-    public void removeBlock(int groupId, AcademicBlock block){}
+    public void removeBlock(int groupId, AcadamicBlock block){}
 }

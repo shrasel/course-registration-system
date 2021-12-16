@@ -23,7 +23,7 @@ public class StudentController {
     public List<Student> getStudent(){
         return studentService.getAllstudents();
     }
-@GetMapping("/update/{id}")
+@GetMapping(value = "{id}")
 public Student getStudentById(@PathVariable int id){
         return  studentService.getStudentById(id);
 }
