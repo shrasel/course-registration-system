@@ -7,17 +7,18 @@ import java.util.List;
 
 @Entity
 @Data
-public class Student extends  User{
+public class Student extends User {
+    @Column(nullable = false)
     private String studentId;
-    @ManyToOne
-    private Address mailingAddress;
-    @ManyToOne
-    private Address HomeAddress;
-
-   // @ManyToMany
-    //private Registration registration;
 
     @OneToMany
     private List<RegistrationRequest> registrationRequest;
 
+    public Student() {
+    }
+
+    public Student(Integer id, String name, String email, String role, String username, String password, Address address, String studentId) {
+        super(id, name, email, role, username, password, address);
+        this.studentId = studentId;
+    }
 }

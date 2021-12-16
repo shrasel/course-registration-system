@@ -6,19 +6,23 @@ import javax.persistence.*;
 import java.util.List;
 
 
-@Entity
+@Embeddable
 @Data
 public class Address {
-    @Id
-    @GeneratedValue
-    private Integer id;
     private String street;
     private String city;
     private String postalCode;
     private String state;
     private String country;
 
-    @OneToMany
-    @JoinColumn(name="student_Id")
-    private List<Student> students;
+    public Address() {
+    }
+
+    public Address(String street, String city, String postalCode, String state, String country) {
+        this.street = street;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.state = state;
+        this.country = country;
+    }
 }
