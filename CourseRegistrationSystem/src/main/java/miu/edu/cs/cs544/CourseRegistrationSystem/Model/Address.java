@@ -11,10 +11,12 @@ import java.util.List;
 public class Address {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
     private String street;
     private String city;
     private String postalCode;
     private String state;
     private String country;
+
+  
 }
