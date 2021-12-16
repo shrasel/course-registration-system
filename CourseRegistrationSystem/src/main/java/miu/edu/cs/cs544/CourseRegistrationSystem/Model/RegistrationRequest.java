@@ -1,9 +1,13 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Data
 public class RegistrationRequest {
@@ -12,17 +16,11 @@ public class RegistrationRequest {
     private  int id;
     private String courseCode;
     private int priority;
-
     @ManyToOne
-    private Registration registration;
+    @JoinColumn(name="student_id")
+    private Student student;
+    @ManyToOne
+    @JoinColumn(name="courseOffering_id")
+    private CourseOffering courseOffering;
 
-    public RegistrationRequest() {
-    }
-
-    public RegistrationRequest(int id, String courseCode, int priority, Registration registration) {
-        this.id = id;
-        this.courseCode = courseCode;
-        this.priority = priority;
-        this.registration = registration;
-    }
 }

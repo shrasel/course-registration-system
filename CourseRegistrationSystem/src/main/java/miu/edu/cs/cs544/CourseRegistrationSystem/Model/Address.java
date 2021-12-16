@@ -17,8 +17,4 @@ public class Address {
     private String postalCode;
     private String state;
     private String country;
-
-    @OneToMany
-    @JoinColumn(name="student_Id")
-    private List<Student> students;
 }

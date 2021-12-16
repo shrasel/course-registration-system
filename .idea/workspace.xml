@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4668dd42-9dc5-4209-af55-1760ced9a974" name="Changes" comment="added yml file">
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcademicBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcademicBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/CourseOffering.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/CourseOffering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Faculty.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Faculty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/RegistrationGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/RegistrationGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/RegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/RegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseOfferingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseOfferingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationRequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationRequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="nadia" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="nadia" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="nadia" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="22EsYWddXLlVjLXdDI5vlHWhlI4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/CourseRegistrationSystem/src/test/java/miu/edu/cs/cs544/CourseRegistrationSystem" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Public/Documents" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.18229854" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hp\IdeaProjects\course-registration-system\CourseRegistrationSystem\src\main\java\miu\edu\cs\cs544\CourseRegistrationSystem\repository" />
+      <recent name="C:\Users\hp\IdeaProjects\course-registration-system\CourseRegistrationSystem\src\main\java\miu\edu\cs\cs544\CourseRegistrationSystem\service" />
+      <recent name="C:\Users\hp\IdeaProjects\course-registration-system\CourseRegistrationSystem\src\main\java\miu\edu\cs\cs544\CourseRegistrationSystem\controller" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CourseRegistrationSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="CourseRegistrationSystem" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="miu.edu.cs.cs544.CourseRegistrationSystem.CourseRegistrationSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.CourseRegistrationSystemApplication" />
+        <item itemvalue="Spring Boot.CourseRegistrationSystemApplication" />
+        <item itemvalue="Spring Boot.CourseRegistrationSystemApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4668dd42-9dc5-4209-af55-1760ced9a974" name="Changes" comment="" />
+      <created>1639414128895</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639414128895</updated>
+      <workItem from="1639414131527" duration="27399000" />
+      <workItem from="1639497702913" duration="15843000" />
+      <workItem from="1639527500757" duration="6326000" />
+      <workItem from="1639533949248" duration="444000" />
+      <workItem from="1639534446393" duration="3486000" />
+      <workItem from="1639538042693" duration="506000" />
+      <workItem from="1639538597525" duration="984000" />
+      <workItem from="1639539717383" duration="3478000" />
+      <workItem from="1639543294369" duration="3309000" />
+      <workItem from="1639546699519" duration="37000" />
+      <workItem from="1639546787019" duration="1312000" />
+      <workItem from="1639588962959" duration="19978000" />
+    </task>
+    <task id="LOCAL-00001" summary="add service controller repository">
+      <created>1639453356778</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639453356778</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update Course Offering and registrationRequest">
+      <created>1639533109233</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639533109233</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added yml file">
+      <created>1639547955549</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639547955549</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add service controller repository" />
+    <MESSAGE value="update Course Offering and registrationRequest" />
+    <MESSAGE value="added yml file" />
+    <option name="LAST_COMMIT_MESSAGE" value="added yml file" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationRequestController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -15,4 +15,8 @@ public class RegistrationService {
     @Autowired
     private RegistrationRepository registrationRepository ;
 
+    public Registration add(Registration registration) {
+        return  registrationRepository.save(registration);
+    }
+
 }

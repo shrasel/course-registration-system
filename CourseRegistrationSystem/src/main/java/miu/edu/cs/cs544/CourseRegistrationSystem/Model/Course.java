@@ -1,13 +1,14 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
-
+@ToString
 @Entity
 @Data
 public class Course {
@@ -17,6 +18,5 @@ public class Course {
     private String name;
     private String code;
     private String description;
-    @OneToMany
-    private List<CourseOffering> courseOfferings;
+
 }

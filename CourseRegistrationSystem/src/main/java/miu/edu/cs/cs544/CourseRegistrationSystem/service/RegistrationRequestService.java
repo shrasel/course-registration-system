@@ -16,11 +16,19 @@ public class RegistrationRequestService {
     @Autowired
     private RegistrationRequestRepository registrationRequestRepository ;
 
-    public RegistrationRequest add(RegistrationRequest r) {
-        return  registrationRequestRepository.save(r);
+    public RegistrationRequest add(RegistrationRequest registrationRequest) {
+        return  registrationRequestRepository.save(registrationRequest);
     }
     public List<RegistrationRequest> findAll() {
 
         return registrationRequestRepository.findAll();
+    }
+    public RegistrationRequest findRegistrationRequest( int id) {
+
+        return registrationRequestRepository.findById(id).get();
+    }
+    public void deleteRegistrationRequest( RegistrationRequest registrationRequest) {
+
+         registrationRequestRepository.delete(registrationRequest);
     }
 }

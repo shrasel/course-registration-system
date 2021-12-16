@@ -12,6 +12,5 @@ import java.util.List;
 public class Faculty extends User{
     private String title;
 
-    @OneToMany
-   private List<Student> student;
+
 }

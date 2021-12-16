@@ -2,11 +2,12 @@ package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
 
-
+@ToString
 @Entity
 @Data
 @AllArgsConstructor
@@ -17,7 +18,7 @@ public class CourseOffering {
     private String code;
     private int capacity;
     private int nbOfRegisteredStudent;
-    private String faculty;
+
 
     @ManyToOne
     @JoinColumn(name="acadamicBlockId")
@@ -27,9 +28,7 @@ public class CourseOffering {
     @JoinColumn(name="courseId")
     private Course course;
 
-    @OneToMany
-    @JoinColumn(name="courseOfferingId")
-    private List<RegistrationRequest> registrationRequest;
+
 
     public CourseOffering(){}
 

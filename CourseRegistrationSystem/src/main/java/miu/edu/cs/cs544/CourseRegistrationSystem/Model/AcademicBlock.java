@@ -1,9 +1,12 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 
+
+@ToString
 @Entity
 @Data
 public class AcademicBlock {

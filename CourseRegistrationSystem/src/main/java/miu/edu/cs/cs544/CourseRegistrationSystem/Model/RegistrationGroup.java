@@ -8,7 +8,7 @@ public class RegistrationGroup {
     private String name;
 
     @OneToMany
-    private List<AcadamicBlock> acadamicBlockList;
+    private List<AcademicBlock> acadamicBlockList;
 
     @OneToMany
     private  List<Student> students;

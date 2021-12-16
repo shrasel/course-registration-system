@@ -1,0 +1,1061 @@
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/CourseOfferingRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package miu.edu.cs.cs544.CourseRegistrationSystem.repository;\r\n\r\nimport miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;\r\nimport org.springframework.data.jpa.repository.JpaRepository;\r\nimport org.springframework.stereotype.Repository;\r\nimport org.springframework.transaction.annotation.Transactional;\r\n\r\n@Repository\r\n@Transactional\r\npublic  interface CourseOfferingRepository extends JpaRepository<CourseOffering, Integer> {\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/CourseOfferingRepository.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/CourseOfferingRepository.java
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/CourseOfferingRepository.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/CourseOfferingRepository.java	(date 1639545441298)
+@@ -1,6 +1,6 @@
+ package miu.edu.cs.cs544.CourseRegistrationSystem.repository;
+ 
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
++import miu.edu.cs.cs544.CourseRegistrationSystem.model.CourseOffering;
+ import org.springframework.data.jpa.repository.JpaRepository;
+ import org.springframework.stereotype.Repository;
+ import org.springframework.transaction.annotation.Transactional;
+Index: CourseRegistrationSystem/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>2.6.1</version>\r\n\t\t<relativePath /> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>miu.edu.cs.cs544</groupId>\r\n\t<artifactId>CourseRegistrationSystem</artifactId>\r\n\t<version>0.0.1-SNAPSHOT</version>\r\n\t<name>CourseRegistrationSystem</name>\r\n\t<description>Demo project for Spring Boot</description>\r\n\t<properties>\r\n\t\t<java.version>1.8</java.version>\r\n\t</properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-security</artifactId>\r\n\t\t</dependency>\r\n\t\t<!-- <dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-devtools</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency> -->\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>mysql</groupId>\r\n\t\t\t<artifactId>mysql-connector-java</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t<optional>true</optional>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<excludes>\r\n\t\t\t\t\t\t<exclude>\r\n\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t\t\t\t</exclude>\r\n\t\t\t\t\t</excludes>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/pom.xml b/CourseRegistrationSystem/pom.xml
+--- a/CourseRegistrationSystem/pom.xml	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/pom.xml	(date 1639546967562)
+@@ -30,18 +30,12 @@
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-starter-security</artifactId>
+ 		</dependency>
+-		<!-- <dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-devtools</artifactId>
+-			<scope>runtime</scope>
+-			<optional>true</optional>
+-		</dependency> -->
+-
+ 		<dependency>
+ 			<groupId>mysql</groupId>
+ 			<artifactId>mysql-connector-java</artifactId>
+ 			<scope>runtime</scope>
+ 		</dependency>
++
+ 		<dependency>
+ 			<groupId>org.projectlombok</groupId>
+ 			<artifactId>lombok</artifactId>
+Index: CourseRegistrationSystem/src/main/resources/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring:\r\n  application:\r\n    name: CourseRegistrationSystem\r\n  datasource:\r\n    url: jdbc:mysql://localhost:3366/cms\r\n    username: root\r\n    password: asdfg123\r\n    driverClassName: com.mysql.cj.jdbc.Driver\r\n    hikari:\r\n      maximumPoolSize: 10\r\n  jpa:\r\n    show-sql: true\r\n    hibernate:\r\n      ddl-auto: create-drop\r\n    properties:\r\n      hibernate:\r\n        dialect: org.hibernate.dialect.MySQL8Dialect
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/resources/application.yml b/CourseRegistrationSystem/src/main/resources/application.yml
+--- a/CourseRegistrationSystem/src/main/resources/application.yml	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/src/main/resources/application.yml	(date 1639546159509)
+@@ -2,16 +2,16 @@
+   application:
+     name: CourseRegistrationSystem
+   datasource:
+-    url: jdbc:mysql://localhost:3366/cms
++    url: jdbc:mysql://localhost:3306/registration-db
+     username: root
+-    password: asdfg123
++    password: Y32UPf#jURGnzM.
+     driverClassName: com.mysql.cj.jdbc.Driver
+     hikari:
+       maximumPoolSize: 10
+   jpa:
+     show-sql: true
+     hibernate:
+-      ddl-auto: create-drop
++      ddl-auto: update
+     properties:
+       hibernate:
+         dialect: org.hibernate.dialect.MySQL8Dialect
+\ No newline at end of file
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/CourseRegistrationSystemApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package miu.edu.cs.cs544.CourseRegistrationSystem;\r\n\r\nimport org.springframework.boot.SpringApplication;\r\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\r\n\r\n@SpringBootApplication\r\npublic class CourseRegistrationSystemApplication {\r\n\r\n\tpublic static void main(String[] args) {\r\n\t\tSpringApplication.run(CourseRegistrationSystemApplication.class, args);\r\n\t}\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/CourseRegistrationSystemApplication.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/CourseRegistrationSystemApplication.java
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/CourseRegistrationSystemApplication.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/CourseRegistrationSystemApplication.java	(date 1639546935955)
+@@ -2,6 +2,7 @@
+ 
+ import org.springframework.boot.SpringApplication;
+ import org.springframework.boot.autoconfigure.SpringBootApplication;
++import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+ 
+ @SpringBootApplication
+ public class CourseRegistrationSystemApplication {
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseOfferingService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package miu.edu.cs.cs544.CourseRegistrationSystem.service;\r\n\r\nimport miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;\r\nimport miu.edu.cs.cs544.CourseRegistrationSystem.repository.CourseOfferingRepository;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport java.util.List;\r\nimport java.util.Optional;\r\n\r\n\r\n@Service\r\npublic  class CourseOfferingService {\r\n\r\n    @Autowired\r\n    private CourseOfferingRepository courseOfferingRepository ;\r\n\r\n    public Optional<CourseOffering> findById(int id) {\r\n\r\n        return courseOfferingRepository.findById(id);\r\n    }\r\n\r\n    public List<CourseOffering> findAll() {\r\n\r\n        return courseOfferingRepository.findAll();\r\n    }\r\n\r\n    public CourseOffering add(CourseOffering c) {\r\n        return  courseOfferingRepository.save(c);\r\n    }\r\n\r\n    public CourseOffering update(CourseOffering c) {\r\n        return  courseOfferingRepository.save(c);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseOfferingService.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseOfferingService.java
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseOfferingService.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseOfferingService.java	(date 1639547043143)
+@@ -1,6 +1,7 @@
+ package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+ 
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
++import miu.edu.cs.cs544.CourseRegistrationSystem.model.CourseOffering;
++import miu.edu.cs.cs544.CourseRegistrationSystem.model.CourseOffering;
+ import miu.edu.cs.cs544.CourseRegistrationSystem.repository.CourseOfferingRepository;
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Service;
+@@ -11,7 +12,6 @@
+ 
+ @Service
+ public  class CourseOfferingService {
+-
+     @Autowired
+     private CourseOfferingRepository courseOfferingRepository ;
+ 
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseOfferingController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package miu.edu.cs.cs544.CourseRegistrationSystem.controller;\r\n\r\nimport miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;\r\nimport miu.edu.cs.cs544.CourseRegistrationSystem.service.CourseOfferingService;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.http.ResponseEntity;\r\nimport org.springframework.web.bind.annotation.*;\r\nimport org.springframework.web.servlet.support.ServletUriComponentsBuilder;\r\n\r\nimport javax.validation.Valid;\r\nimport java.net.URI;\r\nimport java.util.List;\r\n\r\n@RestController\r\n@RequestMapping(\"/courseoffering\")\r\npublic class CourseOfferingController {\r\n\r\n    @Autowired\r\n    private CourseOfferingService courseOfferingService;\r\n\r\n    @PostMapping(\"/add\")\r\n    public ResponseEntity<CourseOffering> addCourseOffering(@RequestBody @Valid CourseOffering courseOffering){\r\n        CourseOffering addedcourseoffering= courseOfferingService.add(courseOffering);\r\n        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()\r\n                .path(\"/{id}\")\r\n                .buildAndExpand(addedcourseoffering.getId())\r\n                .toUri();\r\n        return ResponseEntity.created(uri).body(addedcourseoffering);\r\n    }\r\n    @GetMapping(\"/{id}\")\r\n    public CourseOffering findByid(@PathVariable int  id) {\r\n        return courseOfferingService.findById(id).get();\r\n    }\r\n    @GetMapping(\"/all\")\r\n    public List<CourseOffering> listAllCourseOffering() {\r\n        return courseOfferingService.findAll();\r\n    }\r\n    @PutMapping(\"/update/{id}\")\r\n    public ResponseEntity<CourseOffering> updateCourseOffering(@PathVariable int id, @RequestBody @Valid CourseOffering courseOffering){\r\n        CourseOffering updatedCourseOffering=null;\r\n        CourseOffering tobeUpdateCourseOffering =courseOfferingService.findById(id).get();\r\n        if(tobeUpdateCourseOffering==null){\r\n            updatedCourseOffering= courseOfferingService.add(courseOffering);\r\n        }else {\r\n            courseOffering.setId(tobeUpdateCourseOffering.getId());\r\n            updatedCourseOffering= courseOfferingService.update(courseOffering);\r\n        }\r\n        return  ResponseEntity.ok(updatedCourseOffering);\r\n    }\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseOfferingController.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseOfferingController.java
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseOfferingController.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseOfferingController.java	(date 1639547028895)
+@@ -1,13 +1,12 @@
+ package miu.edu.cs.cs544.CourseRegistrationSystem.controller;
+ 
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
++import miu.edu.cs.cs544.CourseRegistrationSystem.model.CourseOffering;
+ import miu.edu.cs.cs544.CourseRegistrationSystem.service.CourseOfferingService;
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.http.ResponseEntity;
+ import org.springframework.web.bind.annotation.*;
+ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+ 
+-import javax.validation.Valid;
+ import java.net.URI;
+ import java.util.List;
+ 
+@@ -19,7 +18,7 @@
+     private CourseOfferingService courseOfferingService;
+ 
+     @PostMapping("/add")
+-    public ResponseEntity<CourseOffering> addCourseOffering(@RequestBody @Valid CourseOffering courseOffering){
++    public ResponseEntity<CourseOffering> addCourseOffering(@RequestBody  CourseOffering courseOffering){
+         CourseOffering addedcourseoffering= courseOfferingService.add(courseOffering);
+         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+                 .path("/{id}")
+@@ -36,7 +35,7 @@
+         return courseOfferingService.findAll();
+     }
+     @PutMapping("/update/{id}")
+-    public ResponseEntity<CourseOffering> updateCourseOffering(@PathVariable int id, @RequestBody @Valid CourseOffering courseOffering){
++    public ResponseEntity<CourseOffering> updateCourseOffering(@PathVariable int id, @RequestBody  CourseOffering courseOffering){
+         CourseOffering updatedCourseOffering=null;
+         CourseOffering tobeUpdateCourseOffering =courseOfferingService.findById(id).get();
+         if(tobeUpdateCourseOffering==null){
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationRequestService.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationRequestService.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationRequestService.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationRequestService.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,26 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+-
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Registration;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationRequest;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.repository.RegistrationRequestRepository;
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.stereotype.Service;
+-
+-import javax.persistence.ManyToOne;
+-import java.util.List;
+-import java.util.Optional;
+-
+-@Service
+-public class RegistrationRequestService {
+-    @Autowired
+-    private RegistrationRequestRepository registrationRequestRepository ;
+-
+-    public RegistrationRequest add(RegistrationRequest r) {
+-        return  registrationRequestRepository.save(r);
+-    }
+-    public List<RegistrationRequest> findAll() {
+-
+-        return registrationRequestRepository.findAll();
+-    }
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RoleRepository.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RoleRepository.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RoleRepository.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RoleRepository.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,9 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.repository;
+-
+-import org.springframework.data.jpa.repository.JpaRepository;
+-
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Role;
+-
+-public interface RoleRepository extends JpaRepository<Role, Long> {
+-	Role findByName(String name);
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationController.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationController.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationController.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationController.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,18 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.controller;
+-
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Registration;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.service.RegistrationService;
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.http.ResponseEntity;
+-import org.springframework.ui.Model;
+-import org.springframework.web.bind.annotation.*;
+-
+-@RestController
+-@RequestMapping("/registration")
+-public class RegistrationController {
+-    @Autowired
+-    private RegistrationService registrationService;
+-
+-
+-}
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+deleted file mode 100644
+--- a/.idea/compiler.xml	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="CompilerConfiguration">
+-    <annotationProcessing>
+-      <profile name="Maven default annotation processors profile" enabled="true">
+-        <sourceOutputDir name="target/generated-sources/annotations" />
+-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+-        <outputRelativeToContentRoot value="true" />
+-        <module name="CourseRegistrationSystem" />
+-      </profile>
+-    </annotationProcessing>
+-  </component>
+-  <component name="JavacSettings">
+-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+-      <module name="CourseRegistrationSystem" options="-parameters" />
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+deleted file mode 100644
+--- a/.idea/jarRepositories.xml	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,20 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RemoteRepositoriesConfiguration">
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Central Repository" />
+-      <option name="url" value="https://repo.maven.apache.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Maven Central repository" />
+-      <option name="url" value="https://repo1.maven.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="jboss.community" />
+-      <option name="name" value="JBoss Community repository" />
+-      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+-    </remote-repository>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/AcadmicRepository.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/AcadmicRepository.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/AcadmicRepository.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/AcadmicRepository.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,4 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.repository;
+-
+-public class AcadmicRepository {
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseController.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseController.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseController.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/CourseController.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,4 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.controller;
+-
+-public class CourseController {
+-}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="MavenProjectsManager">
+-    <option name="originalFiles">
+-      <list>
+-        <option value="$PROJECT_DIR$/CourseRegistrationSystem/pom.xml" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+-</project>
+\ No newline at end of file
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RegistrationRepository.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RegistrationRepository.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RegistrationRepository.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RegistrationRepository.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,14 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.repository;
+-
+-
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Registration;
+-import org.springframework.data.jpa.repository.JpaRepository;
+-import org.springframework.stereotype.Repository;
+-import org.springframework.transaction.annotation.Transactional;
+-
+-
+-@Repository
+-@Transactional
+-public interface RegistrationRepository extends JpaRepository<Registration, Integer> {
+-
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/AcadmicBlockController.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/AcadmicBlockController.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/AcadmicBlockController.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/AcadmicBlockController.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,10 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.controller;
+-
+-
+-
+-public class AcadmicBlockController {
+-
+-
+-
+-
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseServiceImple.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseServiceImple.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseServiceImple.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseServiceImple.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,4 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+-
+-public class CourseServiceImple {
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/UserRepository.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/UserRepository.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/UserRepository.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/UserRepository.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,9 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.repository;
+-
+-import org.springframework.data.jpa.repository.JpaRepository;
+-
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.User;
+-
+-public interface UserRepository extends JpaRepository<User, Long> {
+-	User findByUsername(String username);
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseService.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseService.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseService.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/CourseService.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,4 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+-
+-public class CourseService {
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationRequestController.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationRequestController.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationRequestController.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/RegistrationRequestController.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,37 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.controller;
+-
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Registration;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationRequest;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.service.RegistrationRequestService;
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.http.ResponseEntity;
+-import org.springframework.ui.Model;
+-import org.springframework.web.bind.annotation.*;
+-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+-
+-import javax.validation.Valid;
+-import java.net.URI;
+-import java.util.List;
+-
+-@RestController
+-@RequestMapping("/registrationrequest")
+-public class RegistrationRequestController {
+-    @Autowired
+-    private RegistrationRequestService registrationRequestService;
+-
+-    @PostMapping("/add")
+-    public ResponseEntity<RegistrationRequest> addRegistrationRequest(@RequestBody @Valid RegistrationRequest registrationRequest){
+-        RegistrationRequest addedRegistrationRequest= registrationRequestService.add(registrationRequest);
+-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+-                .path("/{id}")
+-                .buildAndExpand(addedRegistrationRequest.getId())
+-                .toUri();
+-        return ResponseEntity.created(uri).body(addedRegistrationRequest);
+-    }
+-    @GetMapping("/all")
+-    public List<RegistrationRequest> listAllRegistrationRequest() {
+-
+-        return registrationRequestService.findAll();
+-    }
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/UserServiceImpl.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/UserServiceImpl.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/UserServiceImpl.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/UserServiceImpl.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,57 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+-
+-import java.util.List;
+-
+-import org.springframework.stereotype.Service;
+-import org.springframework.transaction.annotation.Transactional;
+-
+-import lombok.RequiredArgsConstructor;
+-import lombok.extern.slf4j.Slf4j;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Role;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.User;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.repository.RoleRepository;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.repository.UserRepository;
+-
+-@Service
+-@RequiredArgsConstructor
+-@Transactional
+-@Slf4j
+-public class UserServiceImpl implements UserService {
+-	
+-	private final UserRepository userRepo;
+-	private final RoleRepository roleRepo;
+-
+-	@Override
+-	public User saveUser(User user) {
+-		log.info("Saving  new user {} to the database",user.getName());
+-		return userRepo.save(user);
+-	}
+-
+-	@Override
+-	public Role saveRole(Role role) {
+-		log.info("Saving  new role {} to the database",role.getName());
+-		return roleRepo.save(role);
+-	}
+-
+-	@Override
+-	public void addRoleToUser(String username, String roleName) {
+-		log.info("Adding role {}  to user {}",roleName, username);
+-		User user = userRepo.findByUsername(username);
+-		Role role = roleRepo.findByName(roleName);
+-		user.getRoles().add(role);
+-		
+-	}
+-
+-	@Override
+-	public User getUser(String username) {
+-		log.info("Fetching user {} from database", username);
+-		return userRepo.findByUsername(username);
+-	}
+-
+-	@Override
+-	public List<User> getUsers() {
+-		 log.info("Fetching all user");
+-		return userRepo.findAll();
+-	}
+-
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/AcadmicBlockService.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/AcadmicBlockService.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/AcadmicBlockService.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/AcadmicBlockService.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,4 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+-
+-public class AcadmicBlockService {
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/AcadmicBlockServiceImpl.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/AcadmicBlockServiceImpl.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/AcadmicBlockServiceImpl.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/AcadmicBlockServiceImpl.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,4 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+-
+-public class AcadmicBlockServiceImpl {
+-}
+Index: .idea/uiDesigner.xml
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+deleted file mode 100644
+--- a/.idea/encodings.xml	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Encoding">
+-    <file url="file://$PROJECT_DIR$/CourseRegistrationSystem/src/main/java" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/CourseRegistrationSystem/src/main/resources" charset="UTF-8" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/UserService.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/UserService.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/UserService.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/UserService.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,18 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+-
+-import java.util.List;
+-
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Role;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.User;
+-
+-public interface UserService {
+-	User saveUser(User user);
+-
+-	Role saveRole(Role role);
+-
+-	void addRoleToUser(String username, String roleName);
+-
+-	User getUser(String username);
+-
+-	List<User> getUsers();
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationService.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationService.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationService.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RegistrationService.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,18 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+-
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.CourseOffering;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Registration;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationRequest;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.repository.RegistrationRepository;
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.stereotype.Service;
+-
+-import java.util.List;
+-import java.util.Optional;
+-
+-@Service
+-public class RegistrationService {
+-    @Autowired
+-    private RegistrationRepository registrationRepository ;
+-
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/CourseRepository.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/CourseRepository.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/CourseRepository.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/CourseRepository.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,4 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.repository;
+-
+-public class CourseRepository {
+-}
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,32 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.model;
+-
+-import javax.persistence.*;
+-
+-import lombok.AllArgsConstructor;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
+-
+-import java.time.LocalDate;
+-import java.util.List;
+-
+-@Entity
+-@Data
+-@NoArgsConstructor
+-@AllArgsConstructor
+-public class AcadamicBlock {
+-    @Id
+-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+-    private Long id;
+-
+-    private LocalDate StartDate;
+-
+-    private LocalDate EndDate;
+-
+-    private String Semester;
+-
+-    @OneToMany
+-    private List<CourseOffering> courseOfferings;
+-
+-    @Enumerated(EnumType.STRING)
+-    private Semester semester;
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RegistrationRequestRepository.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RegistrationRequestRepository.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RegistrationRequestRepository.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/repository/RegistrationRequestRepository.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,14 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.repository;
+-
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationRequest;
+-import org.springframework.data.jpa.repository.JpaRepository;
+-import org.springframework.stereotype.Repository;
+-import org.springframework.transaction.annotation.Transactional;
+-
+-@Repository
+-@Transactional
+-
+-public interface RegistrationRequestRepository extends JpaRepository<RegistrationRequest, Integer> {
+-
+-
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RoleService.java
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RoleService.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RoleService.java
+deleted file mode 100644
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/service/RoleService.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ /dev/null	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
+@@ -1,5 +0,0 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.service;
+-
+-public interface RoleService {
+-
+-}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package miu.edu.cs.cs544.CourseRegistrationSystem.model;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Collection;\r\n\r\nimport javax.persistence.Entity;\r\nimport javax.persistence.FetchType;\r\nimport javax.persistence.GeneratedValue;\r\nimport javax.persistence.GenerationType;\r\nimport javax.persistence.Id;\r\nimport javax.persistence.Inheritance;\r\nimport javax.persistence.InheritanceType;\r\nimport javax.persistence.ManyToMany;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\n\r\n@Entity\r\n@Data\r\n@NoArgsConstructor\r\n@AllArgsConstructor\r\n@Inheritance(strategy = InheritanceType.JOINED)\r\npublic class User {\r\n\t@Id\r\n\t@GeneratedValue(strategy = GenerationType.AUTO)\r\n\tprivate Long id;\r\n\tprivate String name;\r\n\tprivate String username;\r\n\tprivate String password;\r\n\r\n\t@ManyToMany(fetch = FetchType.EAGER)\r\n\tprivate Collection<Role> roles = new ArrayList<>();\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/User.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/User.java
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/User.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/User.java	(date 1639545238396)
+@@ -29,6 +29,6 @@
+ 	private String username;
+ 	private String password;
+ 
+-	@ManyToMany(fetch = FetchType.EAGER)
+-	private Collection<Role> roles = new ArrayList<>();
++//	@ManyToMany(fetch = FetchType.EAGER)
++//	private Collection<Role> roles = new ArrayList<>();
+ }
+Index: CourseRegistrationSystem/src/test/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/test/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java b/CourseRegistrationSystem/src/test/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java
+new file mode 100644
+--- /dev/null	(date 1639545358948)
++++ b/CourseRegistrationSystem/src/test/java/miu/edu/cs/cs544/CourseRegistrationSystem/Model/AcadamicBlock.java	(date 1639545358948)
+@@ -0,0 +1,33 @@
++//package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
++//
++//import javax.persistence.*;
++//
++//import lombok.AllArgsConstructor;
++//import lombok.Data;
++//import lombok.NoArgsConstructor;
++//import miu.edu.cs.cs544.CourseRegistrationSystem.model.CourseOffering;
++//
++//import java.time.LocalDate;
++//import java.util.List;
++//
++//@Entity
++//@Data
++//@NoArgsConstructor
++//@AllArgsConstructor
++//public class AcadamicBlock {
++//    @Id
++//    @GeneratedValue(strategy = GenerationType.IDENTITY)
++//    private Long id;
++//
++//    private LocalDate StartDate;
++//
++//    private LocalDate EndDate;
++//
++//    private String Semester;
++//
++//    @OneToMany
++//    private List<CourseOffering> courseOfferings;
++//
++//    @Enumerated(EnumType.STRING)
++//    private Semester semester;
++//}
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/CourseOffering.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package miu.edu.cs.cs544.CourseRegistrationSystem.Model;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\n\r\nimport javax.persistence.*;\r\nimport java.util.List;\r\n\r\n\r\n@Entity\r\n@Data\r\n@AllArgsConstructor\r\npublic class CourseOffering {\r\n    @Id\r\n    @GeneratedValue\r\n    private int id;\r\n    private String code;\r\n    private int capacity;\r\n    private int nbOfRegisteredStudent;\r\n    private String faculty;\r\n\r\n    @ManyToOne\r\n    @JoinColumn(name=\"acadamicBlockId\")\r\n    private AcademicBlock academicBlock;\r\n\r\n    @ManyToOne()\r\n    @JoinColumn(name=\"courseId\")\r\n    private Course course;\r\n\r\n    @OneToMany\r\n    @JoinColumn(name=\"courseOfferingId\")\r\n    private List<RegistrationRequest> registrationRequest;\r\n\r\n    public CourseOffering(){}\r\n\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/CourseOffering.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/CourseOffering.java
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/CourseOffering.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/CourseOffering.java	(date 1639545100189)
+@@ -1,4 +1,4 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.Model;
++package miu.edu.cs.cs544.CourseRegistrationSystem.model;
+ 
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/RegistrationGroup.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package miu.edu.cs.cs544.CourseRegistrationSystem.model;\r\n\r\nimport javax.persistence.OneToMany;\r\nimport java.util.List;\r\n\r\npublic class RegistrationGroup {\r\n    private int id;\r\n    private String name;\r\n\r\n    @OneToMany\r\n    private List<AcadamicBlock> acadamicBlockList;\r\n\r\n    @OneToMany\r\n    private  List<Student> students;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/RegistrationGroup.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/RegistrationGroup.java
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/RegistrationGroup.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/model/RegistrationGroup.java	(date 1639545431797)
+@@ -8,7 +8,7 @@
+     private String name;
+ 
+     @OneToMany
+-    private List<AcadamicBlock> acadamicBlockList;
++    private List<AcademicBlock> acadamicBlockList;
+ 
+     @OneToMany
+     private  List<Student> students;
+Index: CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/UserController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package miu.edu.cs.cs544.CourseRegistrationSystem.controller;\r\n\r\nimport java.net.URI;\r\nimport java.util.List;\r\n\r\nimport org.springframework.http.ResponseEntity;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\nimport org.springframework.web.bind.annotation.RequestBody;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\nimport org.springframework.web.bind.annotation.RestController;\r\nimport org.springframework.web.servlet.support.ServletUriComponentsBuilder;\r\n\r\nimport lombok.RequiredArgsConstructor;\r\nimport miu.edu.cs.cs544.CourseRegistrationSystem.Model.Role;\r\nimport miu.edu.cs.cs544.CourseRegistrationSystem.Model.User;\r\nimport miu.edu.cs.cs544.CourseRegistrationSystem.service.UserService;\r\n\r\n@RestController\r\n@RequestMapping(\"/api\")\r\n@RequiredArgsConstructor\r\npublic class UserController {\r\n\tprivate final UserService userService;\r\n\r\n\t@GetMapping(\"/users\")\r\n\tpublic ResponseEntity<List<User>> getUsers() {\r\n\t\treturn ResponseEntity.ok().body(userService.getUsers());\r\n\t}\r\n\t\r\n\t@PostMapping(\"/user/save\")\r\n\tpublic ResponseEntity<User> saveUser(@RequestBody User user) {\r\n\t\tURI uri = URI.create (ServletUriComponentsBuilder.fromCurrentContextPath().path(\"/api/user/save\").toUriString());\r\n\t\treturn ResponseEntity.created(uri).body(userService.saveUser(user));\r\n\t}\r\n\t\r\n\t@PostMapping(\"/role/save\")\r\n\tpublic ResponseEntity<Role> saveRole(@RequestBody Role role) {\r\n\t\tURI uri = URI.create (ServletUriComponentsBuilder.fromCurrentContextPath().path(\"/api/role/save\").toUriString());\r\n\t\treturn ResponseEntity.created(uri).body(userService.saveRole(role));\r\n\t}\r\n\t\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/UserController.java b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/UserController.java
+--- a/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/UserController.java	(revision 6d9a0bf05baaab22d309d4edf5e9bc900998e761)
++++ b/CourseRegistrationSystem/src/main/java/miu/edu/cs/cs544/CourseRegistrationSystem/controller/UserController.java	(date 1639545130777)
+@@ -1,42 +1,42 @@
+-package miu.edu.cs.cs544.CourseRegistrationSystem.controller;
+-
+-import java.net.URI;
+-import java.util.List;
+-
+-import org.springframework.http.ResponseEntity;
+-import org.springframework.web.bind.annotation.GetMapping;
+-import org.springframework.web.bind.annotation.PostMapping;
+-import org.springframework.web.bind.annotation.RequestBody;
+-import org.springframework.web.bind.annotation.RequestMapping;
+-import org.springframework.web.bind.annotation.RestController;
+-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+-
+-import lombok.RequiredArgsConstructor;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Role;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.Model.User;
+-import miu.edu.cs.cs544.CourseRegistrationSystem.service.UserService;
+-
+-@RestController
+-@RequestMapping("/api")
+-@RequiredArgsConstructor
+-public class UserController {
+-	private final UserService userService;
+-
+-	@GetMapping("/users")
+-	public ResponseEntity<List<User>> getUsers() {
+-		return ResponseEntity.ok().body(userService.getUsers());
+-	}
+-	
+-	@PostMapping("/user/save")
+-	public ResponseEntity<User> saveUser(@RequestBody User user) {
+-		URI uri = URI.create (ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/user/save").toUriString());
+-		return ResponseEntity.created(uri).body(userService.saveUser(user));
+-	}
+-	
+-	@PostMapping("/role/save")
+-	public ResponseEntity<Role> saveRole(@RequestBody Role role) {
+-		URI uri = URI.create (ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/role/save").toUriString());
+-		return ResponseEntity.created(uri).body(userService.saveRole(role));
+-	}
+-	
+-}
++//package miu.edu.cs.cs544.CourseRegistrationSystem.controller;
++//
++//import java.net.URI;
++//import java.util.List;
++//
++//import org.springframework.http.ResponseEntity;
++//import org.springframework.web.bind.annotation.GetMapping;
++//import org.springframework.web.bind.annotation.PostMapping;
++//import org.springframework.web.bind.annotation.RequestBody;
++//import org.springframework.web.bind.annotation.RequestMapping;
++//import org.springframework.web.bind.annotation.RestController;
++//import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
++//
++//import lombok.RequiredArgsConstructor;
++//import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Role;
++//import miu.edu.cs.cs544.CourseRegistrationSystem.Model.User;
++//import miu.edu.cs.cs544.CourseRegistrationSystem.service.UserService;
++//
++//@RestController
++//@RequestMapping("/api")
++//@RequiredArgsConstructor
++//public class UserController {
++//	private final UserService userService;
++//
++//	@GetMapping("/users")
++//	public ResponseEntity<List<User>> getUsers() {
++//		return ResponseEntity.ok().body(userService.getUsers());
++//	}
++//
++//	@PostMapping("/user/save")
++//	public ResponseEntity<User> saveUser(@RequestBody User user) {
++//		URI uri = URI.create (ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/user/save").toUriString());
++//		return ResponseEntity.created(uri).body(userService.saveUser(user));
++//	}
++//
++//	@PostMapping("/role/save")
++//	public ResponseEntity<Role> saveRole(@RequestBody Role role) {
++//		URI uri = URI.create (ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/role/save").toUriString());
++//		return ResponseEntity.created(uri).body(userService.saveRole(role));
++//	}
++//
++//}
+diff --git a/CourseRegistrationSystem/src/main/resources/application.properties b/CourseRegistrationSystem/src/main/resources/application.properties
+deleted file mode 100644
