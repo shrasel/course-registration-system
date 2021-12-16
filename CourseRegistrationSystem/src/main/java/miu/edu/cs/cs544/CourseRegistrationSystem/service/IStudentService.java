@@ -1,5 +1,6 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.service;
 
+import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationGroup;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.Student;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,7 @@
 package miu.edu.cs.cs544.CourseRegistrationSystem.service.Impl;
 
 import miu.edu.cs.cs544.CourseRegistrationSystem.DTO.StudentDTO;
+import miu.edu.cs.cs544.CourseRegistrationSystem.Enum.Entry;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.AcadamicBlock;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationGroup;
 import miu.edu.cs.cs544.CourseRegistrationSystem.Model.RegistrationGroupStudents;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,6 +31,44 @@ public class RegistrationGroupServiceImpl implements IRegistrationGroupService {
         this.registrationGroupRepo = registrationGroupRepo;
     }
 
+
+
+    //==========================Start crud========================//
+    @Override
+    public RegistrationGroup getRegById(Integer id) {
+
+
+        return registrationGroupRepo.findById(id).get();
+    }
+
+    @Override
+    public List<RegistrationGroup> getAllReg() {
+        return registrationGroupRepo.findAll();
+    }
+
+    @Override
+    public void addRegistrationGroup(RegistrationGroup registrationGroup) {
+        registrationGroupRepo.save(registrationGroup);
+    }
+
+    @Override
+    public RegistrationGroup updateReg(Integer id, RegistrationGroup registrationGroup) {
+        Optional<RegistrationGroup> updatereg= Optional.ofNullable(null);
+        RegistrationGroup reg=updatereg.orElse(null);
+        if(reg!=null){
+            reg.setName(registrationGroup.getName());
+            reg.setEntry(registrationGroup.getEntry());
+            reg.setTrack(registrationGroup.getTrack());
+            return registrationGroupRepo.save(reg);
+        }
+        return  null;
+    }
+
+    @Override
+    public void deleteRegistrationGroup(int id) {
+     registrationGroupRepo.deleteById(id);
+    }
+//==========================end crud========================//
     @Override
     public void addStudent(StudentDTO studentDto) {
         Student student = studentRepository.findByStudentId(studentDto.getStudentId());

@@ -11,8 +11,8 @@ import java.util.List;
 public class RegistrationGroup {
 
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
     private String name;
 
     @Enumerated(EnumType.STRING)
@@ -23,7 +23,7 @@ public class RegistrationGroup {
    /* @OneToMany
     private List<Student> students;*/
 
-   @OneToMany(cascade = CascadeType.ALL)
+   @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     private List<AcadamicBlock> acadamicBlockList;
 
     public void addBlock(AcadamicBlock block) {}
